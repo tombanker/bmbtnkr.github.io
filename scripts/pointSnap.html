@@ -1,0 +1,22 @@
+<pre style='color:#000020;background:#f6f8ff;'><html><body style='color:#000020; background:#f6f8ff; '><pre>
+<span style='color:#200080; font-weight:bold; '>import</span> maya<span style='color:#308080; '>.</span>cmds as cmds
+
+<span style='color:#200080; font-weight:bold; '>def</span> point_snap<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#308080; '>:</span>
+    sel <span style='color:#308080; '>=</span> cmds<span style='color:#308080; '>.</span>ls<span style='color:#308080; '>(</span>sl <span style='color:#308080; '>=</span> <span style='color:#e34adc; '>True</span><span style='color:#308080; '>)</span>
+    
+    <span style='color:#200080; font-weight:bold; '>if</span> <span style='color:#e34adc; '>len</span><span style='color:#308080; '>(</span>sel<span style='color:#308080; '>)</span> <span style='color:#308080; '>&lt;</span> <span style='color:#008c00; '>2</span><span style='color:#308080; '>:</span>
+        <span style='color:#200080; font-weight:bold; '>raise</span> <span style='color:#e34adc; '>StandardError</span><span style='color:#308080; '>,</span> <span style='color:#1060b6; '>'Error: Please select at least 2 objects'</span> 
+        
+    obj_list <span style='color:#308080; '>=</span> sel<span style='color:#308080; '>[</span><span style='color:#308080; '>:</span><span style='color:#308080; '>-</span><span style='color:#008c00; '>1</span><span style='color:#308080; '>]</span>
+    target <span style='color:#308080; '>=</span> sel<span style='color:#308080; '>[</span><span style='color:#308080; '>-</span><span style='color:#008c00; '>1</span><span style='color:#308080; '>]</span>
+    pnt_constraint_list <span style='color:#308080; '>=</span> <span style='color:#308080; '>[</span><span style='color:#308080; '>]</span>
+    
+    <span style='color:#200080; font-weight:bold; '>for</span> objs <span style='color:#200080; font-weight:bold; '>in</span> obj_list<span style='color:#308080; '>:</span>
+      pnt_constraint <span style='color:#308080; '>=</span> cmds<span style='color:#308080; '>.</span>pointConstraint<span style='color:#308080; '>(</span>target<span style='color:#308080; '>,</span> objs<span style='color:#308080; '>,</span> mo<span style='color:#308080; '>=</span><span style='color:#008c00; '>0</span><span style='color:#308080; '>)</span>
+      pnt_constraint_list<span style='color:#308080; '>.</span>append<span style='color:#308080; '>(</span>pnt_constraint<span style='color:#308080; '>)</span>
+      
+    <span style='color:#200080; font-weight:bold; '>for</span> temp_constraint <span style='color:#200080; font-weight:bold; '>in</span> pnt_constraint_list<span style='color:#308080; '>:</span>  
+      cmds<span style='color:#308080; '>.</span>delete<span style='color:#308080; '>(</span>temp_constraint<span style='color:#308080; '>)</span>
+      
+point_snap<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span>
+</pre>

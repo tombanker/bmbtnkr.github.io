@@ -1,0 +1,246 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+background: #2d2d2d;
+background-attachment: fixed;
+border-top: 4px solid #e97045;
+background-image:url('images/lines.png');
+background-repeat: repeat;
+}
+
+a, a:link { color: #356EF1; }
+a:visited { color: #2750AF; }
+a, a:link, a:visited { text-decoration: none; }
+
+#h1 {
+    display: block;
+    float: none;
+    height: 16px;
+    margin-right: 1px;
+    padding: 10px 4px 10px 4px;
+    letter-spacing: 0px;
+    text-decoration: none;
+    text-align: center;
+    font-family:"Arial";
+    font-size: 16px;
+    font-weight:bold;
+    color: #FFFFFF;
+}
+
+#h2 {
+    display: block;
+    float: none;
+    height: 16px;
+    margin-right: 1px;
+    padding: 10px 4px 10px 4px;
+    letter-spacing: 0px;
+    text-decoration: none;
+    text-align: center;
+    font-family:"Arial";
+    font-size: 16px;
+    font-weight:bold;
+    color: #FFFFFF;
+}
+
+img.title{
+    width: 381px;
+    height: 92px;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    float: left;
+    background-image: url('images/title.png');
+}
+
+a.home {
+    display: block;
+    width: 69px;
+    height: 68px;
+    position: fixed;
+    top: 43px;
+    right: 230px;
+    float: left;
+    opacity: 0.5;
+    background-image: url('images/home.png');
+    transition: opacity .8s ease-in-out;
+    -moz-transition: opacity .8s ease-in-out;
+    -webkit-transition: opacity .8s ease-in-out;
+}
+
+a.home:hover {
+    background-position: center bottom;
+        opacity: 1.0;
+    transition: opacity .6s ease-in-out;
+    -moz-transition: opacity .6s ease-in-out;
+    -webkit-transition: opacity .6s ease-in-out;
+}
+
+a.tie {
+    display: block;
+    width: 69px;
+    height: 68px;
+    position: fixed;
+    top: 41px;
+    right: 128px;
+    float: left;
+    opacity: 0.5;
+    background-image: url('images/tie.png');
+    transition: opacity .8s ease-in-out;
+    -moz-transition: opacity .8s ease-in-out;
+    -webkit-transition: opacity .8s ease-in-out;
+}
+
+a.tie:hover {
+    background-position: center bottom;
+        opacity: 1.0;
+    transition: opacity .6s ease-in-out;
+    -moz-transition: opacity .6s ease-in-out;
+    -webkit-transition: opacity .6s ease-in-out;
+}
+
+a.gear {
+    display: block;
+    width: 69px;
+    height: 68px;
+    position: fixed;
+    top: 41px;
+    right: 30px;
+    float: left;
+    opacity: 0.5;
+    background-image: url('images/gear.png');
+    transition: opacity .8s ease-in-out;
+    -moz-transition: opacity .8s ease-in-out;
+    -webkit-transition: opacity .8s ease-in-out;
+}
+
+a.gear:hover {
+    background-position: center bottom;
+        opacity: 1.0;
+    transition: opacity .6s ease-in-out;
+    -moz-transition: opacity .6s ease-in-out;
+    -webkit-transition: opacity .6s ease-in-out;
+}
+
+
+
+
+a.web {
+    display: block;
+    width: 279px;
+    height: 50px;
+    position: fixed;
+    top: 180px;
+    left: 25px;
+    float: left;
+    opacity: 0.5;
+    background-image: url('images/web.png');
+    transition: .8s ease-in-out;
+    -moz-transition: .8s ease-in-out;
+    -webkit-transition: .8s ease-in-out;
+}
+
+a.web:hover {
+    background-position: center bottom;
+    opacity: 1.0;
+    transition: .6s ease-in-out;
+    -moz-transition: .6s ease-in-out;
+    -webkit-transition: .6s ease-in-out;
+}
+
+a.email {
+    display: block;
+    width: 279px;
+    height: 50px;
+    position: fixed;
+    top: 240px;
+    left: 25px;
+    float: left;
+    opacity: 0.5;
+    background-image: url('images/email.png');
+    transition: .8s ease-in-out;
+    -moz-transition: .8s ease-in-out;
+    -webkit-transition: .8s ease-in-out;
+}
+
+a.email:hover {
+    background-position: center bottom;
+    opacity: 1.0;
+    transition: .6s ease-in-out;
+    -moz-transition: .6s ease-in-out;
+    -webkit-transition: .6s ease-in-out;
+}
+
+
+a.linkedIn {
+    display: block;
+    width: 279px;
+    height: 50px;
+    position: fixed;
+    top: 300px;
+    left: 25px;
+    float: left;
+    opacity: 0.5;
+    background-image: url('images/linkedIn.png');
+    transition: .8s ease-in-out;
+    -moz-transition: .8s ease-in-out;
+    -webkit-transition: .8s ease-in-out;
+}
+
+a.linkedIn:hover {
+    background-position: center bottom;
+    opacity: 1.0;
+    transition: .6s ease-in-out;
+    -moz-transition: .6s ease-in-out;
+    -webkit-transition: .6s ease-in-out;
+}
+
+a.vimeo {
+    display: block;
+    width: 279px;
+    height: 50px;
+    position: fixed;
+    top: 360px;
+    left: 25px;
+    float: left;
+    opacity: 0.5;
+    background-image: url('images/vimeo.png');
+    transition: .8s ease-in-out;
+    -moz-transition: .8s ease-in-out;
+    -webkit-transition: .8s ease-in-out;
+}
+
+a.vimeo:hover {
+    background-position: center bottom;
+    opacity: 1.0;
+    transition: .6s ease-in-out;
+    -moz-transition: .6s ease-in-out;
+    -webkit-transition: .6s ease-in-out;
+}
+
+a.twitter {
+    display: block;
+    width: 279px;
+    height: 50px;
+    position: fixed;
+    top: 420px;
+    left: 25px;
+    float: left;
+    opacity: 0.5;
+    background-image: url('images/twitter.png');
+    transition: .8s ease-in-out;
+    -moz-transition: .8s ease-in-out;
+    -webkit-transition: .8s ease-in-out;
+}
+
+a.twitter:hover {
+    background-position: center bottom;
+    opacity: 1.0;
+    transition: .6s ease-in-out;
+    -moz-transition: .6s ease-in-out;
+    -webkit-transition: .6s ease-in-out;
+}

@@ -1,0 +1,12 @@
+<pre style='color:#000020;background:#f6f8ff;'><html><body style='color:#000020; background:#f6f8ff; '><pre>
+<span style='color:#200080; font-weight:bold; '>import</span> maya<span style='color:#308080; '>.</span>cmds as cmds
+
+<span style='color:#200080; font-weight:bold; '>def</span> jnt_snap<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#308080; '>:</span>
+    clst <span style='color:#308080; '>=</span> cmds<span style='color:#308080; '>.</span>cluster<span style='color:#308080; '>(</span>n<span style='color:#308080; '>=</span><span style='color:#1060b6; '>'newCluster1'</span><span style='color:#308080; '>)</span>
+    cmds<span style='color:#308080; '>.</span>select<span style='color:#308080; '>(</span>clear<span style='color:#308080; '>=</span><span style='color:#e34adc; '>True</span><span style='color:#308080; '>)</span>
+    jnt <span style='color:#308080; '>=</span> cmds<span style='color:#308080; '>.</span>joint<span style='color:#308080; '>(</span>n<span style='color:#308080; '>=</span><span style='color:#1060b6; '>'newJoint1'</span><span style='color:#308080; '>)</span>
+    jnt_pc <span style='color:#308080; '>=</span> cmds<span style='color:#308080; '>.</span>parentConstraint<span style='color:#308080; '>(</span>clst<span style='color:#308080; '>[</span><span style='color:#308080; '>:</span><span style='color:#308080; '>]</span><span style='color:#308080; '>,</span> jnt<span style='color:#308080; '>[</span><span style='color:#308080; '>:</span><span style='color:#308080; '>]</span><span style='color:#308080; '>,</span> mo<span style='color:#308080; '>=</span><span style='color:#008c00; '>0</span><span style='color:#308080; '>)</span>
+    cmds<span style='color:#308080; '>.</span>delete<span style='color:#308080; '>(</span>clst<span style='color:#308080; '>,</span> jnt_pc<span style='color:#308080; '>)</span>
+    
+jnt_snap<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span>
+</pre>

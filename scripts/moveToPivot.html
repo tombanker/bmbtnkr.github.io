@@ -1,0 +1,21 @@
+<pre style='color:#000020;background:#f6f8ff;'><span style='color:#595979; '># moveToPivot</span>
+<span style='color:#595979; '># Will match a selected object to the pivot of another object</span>
+
+<span style='color:#595979; '># Import Mel package</span>
+<span style='color:#200080; font-weight:bold; '>from</span> maya<span style='color:#308080; '>.</span>mel <span style='color:#200080; font-weight:bold; '>import</span> <span style='color:#308080; '>*</span>
+<span style='color:#200080; font-weight:bold; '>import</span> maya<span style='color:#308080; '>.</span>cmds as cmds
+
+<span style='color:#200080; font-weight:bold; '>def</span> moveToPivot<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#308080; '>:</span>
+    <span style='color:#595979; '>#Get selected objects</span>
+    currentSel <span style='color:#308080; '>=</span> cmds<span style='color:#308080; '>.</span>ls<span style='color:#308080; '>(</span>sl <span style='color:#308080; '>=</span> <span style='color:#e34adc; '>True</span><span style='color:#308080; '>)</span>
+    base <span style='color:#308080; '>=</span> currentSel<span style='color:#308080; '>[</span><span style='color:#008c00; '>1</span><span style='color:#308080; '>]</span>
+    target <span style='color:#308080; '>=</span> currentSel<span style='color:#308080; '>[</span><span style='color:#008c00; '>0</span><span style='color:#308080; '>]</span>
+    
+    worldSpaceBase <span style='color:#308080; '>=</span> cmds<span style='color:#308080; '>.</span>xform<span style='color:#308080; '>(</span>base<span style='color:#308080; '>,</span> q<span style='color:#308080; '>=</span><span style='color:#e34adc; '>True</span><span style='color:#308080; '>,</span> ws<span style='color:#308080; '>=</span><span style='color:#e34adc; '>True</span><span style='color:#308080; '>,</span> rp<span style='color:#308080; '>=</span><span style='color:#e34adc; '>True</span><span style='color:#308080; '>)</span>
+    cmds<span style='color:#308080; '>.</span>setAttr<span style='color:#308080; '>(</span><span style='color:#308080; '>(</span>target<span style='color:#308080; '>+</span><span style='color:#1060b6; '>".translateX"</span><span style='color:#308080; '>)</span><span style='color:#308080; '>,</span> worldSpaceBase<span style='color:#308080; '>[</span><span style='color:#008c00; '>0</span><span style='color:#308080; '>]</span><span style='color:#308080; '>)</span>
+    cmds<span style='color:#308080; '>.</span>setAttr<span style='color:#308080; '>(</span><span style='color:#308080; '>(</span>target<span style='color:#308080; '>+</span><span style='color:#1060b6; '>".translateY"</span><span style='color:#308080; '>)</span><span style='color:#308080; '>,</span> worldSpaceBase<span style='color:#308080; '>[</span><span style='color:#008c00; '>1</span><span style='color:#308080; '>]</span><span style='color:#308080; '>)</span>
+    cmds<span style='color:#308080; '>.</span>setAttr<span style='color:#308080; '>(</span><span style='color:#308080; '>(</span>target<span style='color:#308080; '>+</span><span style='color:#1060b6; '>".translateZ"</span><span style='color:#308080; '>)</span><span style='color:#308080; '>,</span> worldSpaceBase<span style='color:#308080; '>[</span><span style='color:#008c00; '>2</span><span style='color:#308080; '>]</span><span style='color:#308080; '>)</span>
+
+<span style='color:#595979; '>#Run moveToPivot    </span>
+moveToPivot<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span>
+</pre>

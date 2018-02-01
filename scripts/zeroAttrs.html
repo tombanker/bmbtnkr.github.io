@@ -1,0 +1,32 @@
+<pre style='color:#000020;background:#f6f8ff;'><html><body style='color:#000020; background:#f6f8ff; '><pre>
+<span style='color:#200080; font-weight:bold; '>import</span> maya<span style='color:#308080; '>.</span>cmds as cmds
+<span style='color:#200080; font-weight:bold; '>import</span> maya<span style='color:#308080; '>.</span>mel as mel
+
+
+<span style='color:#200080; font-weight:bold; '>def</span> reset_attrs<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span><span style='color:#308080; '>:</span>
+    sel <span style='color:#308080; '>=</span> cmds<span style='color:#308080; '>.</span>ls<span style='color:#308080; '>(</span>sl<span style='color:#308080; '>=</span><span style='color:#e34adc; '>True</span><span style='color:#308080; '>)</span>
+    
+    <span style='color:#200080; font-weight:bold; '>if</span> <span style='color:#e34adc; '>len</span><span style='color:#308080; '>(</span>sel<span style='color:#308080; '>)</span> <span style='color:#308080; '>=</span><span style='color:#308080; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#308080; '>:</span>
+        <span style='color:#200080; font-weight:bold; '>raise</span> <span style='color:#e34adc; '>StandardError</span><span style='color:#308080; '>,</span> <span style='color:#1060b6; '>'Error: Please select an object'</span>    
+        
+    obj_list <span style='color:#308080; '>=</span> sel<span style='color:#308080; '>[</span><span style='color:#308080; '>:</span><span style='color:#308080; '>]</span>
+    xyz <span style='color:#308080; '>=</span> <span style='color:#308080; '>[</span><span style='color:#1060b6; '>'X'</span><span style='color:#308080; '>,</span><span style='color:#1060b6; '>'Y'</span><span style='color:#308080; '>,</span><span style='color:#1060b6; '>'Z'</span><span style='color:#308080; '>]</span>
+    non_zero_attrs <span style='color:#308080; '>=</span> <span style='color:#308080; '>[</span><span style='color:#1060b6; '>'sx'</span><span style='color:#308080; '>,</span> <span style='color:#1060b6; '>'sy'</span><span style='color:#308080; '>,</span> <span style='color:#1060b6; '>'sz'</span><span style='color:#308080; '>,</span> <span style='color:#1060b6; '>'v'</span><span style='color:#308080; '>]</span>
+    channelBox <span style='color:#308080; '>=</span> mel<span style='color:#308080; '>.</span><span style='color:#e34adc; '>eval</span><span style='color:#308080; '>(</span><span style='color:#1060b6; '>'global string $gChannelBoxName; $temp=$gChannelBoxName;'</span><span style='color:#308080; '>)</span>
+    attrs <span style='color:#308080; '>=</span> cmds<span style='color:#308080; '>.</span>channelBox<span style='color:#308080; '>(</span>channelBox<span style='color:#308080; '>,</span> q<span style='color:#308080; '>=</span><span style='color:#e34adc; '>True</span><span style='color:#308080; '>,</span> sma<span style='color:#308080; '>=</span><span style='color:#e34adc; '>True</span><span style='color:#308080; '>)</span>
+    
+    <span style='color:#200080; font-weight:bold; '>if</span> attrs <span style='color:#308080; '>=</span><span style='color:#308080; '>=</span> <span style='color:#e34adc; '>None</span><span style='color:#308080; '>:</span>
+        <span style='color:#200080; font-weight:bold; '>for</span> axis <span style='color:#200080; font-weight:bold; '>in</span> xyz<span style='color:#308080; '>:</span>
+            <span style='color:#200080; font-weight:bold; '>for</span> obj <span style='color:#200080; font-weight:bold; '>in</span> obj_list<span style='color:#308080; '>:</span>
+                cmds<span style='color:#308080; '>.</span>setAttr<span style='color:#308080; '>(</span><span style='color:#308080; '>(</span>obj <span style='color:#308080; '>+</span><span style='color:#1060b6; '>'.translate'</span><span style='color:#308080; '>+</span>axis<span style='color:#308080; '>)</span><span style='color:#308080; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#308080; '>)</span>
+                cmds<span style='color:#308080; '>.</span>setAttr<span style='color:#308080; '>(</span><span style='color:#308080; '>(</span>obj <span style='color:#308080; '>+</span><span style='color:#1060b6; '>'.rotate'</span><span style='color:#308080; '>+</span>axis<span style='color:#308080; '>)</span><span style='color:#308080; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#308080; '>)</span>  
+    <span style='color:#200080; font-weight:bold; '>else</span><span style='color:#308080; '>:</span>
+        <span style='color:#200080; font-weight:bold; '>for</span> attr <span style='color:#200080; font-weight:bold; '>in</span> attrs<span style='color:#308080; '>:</span>
+            <span style='color:#200080; font-weight:bold; '>for</span> obj <span style='color:#200080; font-weight:bold; '>in</span> obj_list<span style='color:#308080; '>:</span>
+                <span style='color:#200080; font-weight:bold; '>if</span> attr <span style='color:#200080; font-weight:bold; '>in</span> non_zero_attrs<span style='color:#308080; '>:</span>
+                    <span style='color:#200080; font-weight:bold; '>continue</span>
+                <span style='color:#200080; font-weight:bold; '>else</span><span style='color:#308080; '>:</span>
+                    cmds<span style='color:#308080; '>.</span>setAttr<span style='color:#308080; '>(</span>obj<span style='color:#308080; '>+</span><span style='color:#1060b6; '>'.'</span><span style='color:#308080; '>+</span>attr<span style='color:#308080; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#308080; '>)</span>
+            
+reset_attrs<span style='color:#308080; '>(</span><span style='color:#308080; '>)</span>
+</pre>
