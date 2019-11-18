@@ -1,0 +1,70 @@
+html {
+    font-size: 14px;
+}
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body{
+    background: url("../img/bg.png") repeat;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.7) 0%,rgba(0,0,0,0.9) 100%), url("../img/bg.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-clip: border-box;
+    background-origin: padding-box;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-size: 600px;
+}
+
+.container {
+    max-width: 80%;
+}
+
+.main-header{
+    width: 80%;
+}
+
+.lead{
+    font-size: 2em;
+    font-family: 'Pt Sans';
+    font-weight: 400;
+    color: #aaa;
+    margin-top: 2em;
+    margin-bottom: 0em;
+}
+
+.divider{
+    margin-bottom: 2em;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+body{
+    background-color: #121212;
+    color: #999;
+}
+
+.list-inline-item{
+    font-size: 1.5em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    letter-spacing: .03em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.d-flex{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+}
