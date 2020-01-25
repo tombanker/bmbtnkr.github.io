@@ -9,7 +9,7 @@ html {
 
 body{
     background: url("../img/bg.png") repeat;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,.7) 0%,rgba(0,0,0,0.9) 100%), url("../img/bg.png");
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.75) 0%,rgba(0,0,0,0.9) 100%), url("../img/bg.png");
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: center center;
@@ -31,8 +31,8 @@ body{
 .lead{
     font-size: 2em;
     font-family: 'Pt Sans';
-    font-weight: 400;
-    color: #aaa;
+    font-weight: 00;
+    color: #ddd;
     margin-top: 2em;
     margin-bottom: 0em;
 }
@@ -54,8 +54,8 @@ body{
 .list-inline-item{
     font-size: 1.5em;
     font-family: 'Raleway', sans-serif;
-    font-weight: 200;
-    letter-spacing: .03em;
+    font-weight: 400;
+    letter-spacing: .05em;
     margin-left: 0.5em;
     margin-right: 0.5em;
 }
